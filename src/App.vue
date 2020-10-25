@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" v-loading="true">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>

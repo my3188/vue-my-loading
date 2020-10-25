@@ -21,11 +21,15 @@ function merge(target) {
 const LoadingConstructor = Vue.extend(loadingVue);
 
 const defaults = {
+  loaderType: "bars",
+  color: "#4f8bff",
+  height: 80,
+  width: 80,
   text: null,
   fullscreen: true,
   body: false,
   lock: false,
-  customClass: ""
+  customClass: "",
 };
 
 let fullscreenLoading;

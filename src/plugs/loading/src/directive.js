@@ -93,13 +93,10 @@ loadingDirective.install = (Vue) => {
 
   Vue.directive("loading", {
     bind: function(el, binding, vnode) {
-      console.log("loadingDirective.install -> binding", binding)
+      // console.log("loadingDirective.install -> binding", binding)
       const textExr = el.getAttribute("loading-text");
       const spinnerExr = el.getAttribute("loading-spinner");
-      // console.log("loadingDirective.install -> spinnerExr", spinnerExr)
-      if (vnode.data.attrs==undefined) {
-        // debugger
-      }
+
       if (vnode.data && vnode.data.attrs) {
         const loaderExr = vnode.data.attrs["loading-loader"];
       }
@@ -108,13 +105,13 @@ loadingDirective.install = (Vue) => {
       const colorExr = el.getAttribute("loading-color");
       const heightExr = el.getAttribute("loading-height");
       // const heightExr = vnode.data.attrs["loading-height"];
-      // console.log("loadingDirective.install -> heightExr", heightExr)
       const widthExr = el.getAttribute("loading-width");
       // const widthExr = vnode.data.attrs["loading-width"];
-      // console.log("loadingDirective.install -> widthExr", widthExr)
       const backgroundExr = el.getAttribute("loading-background");
       const customClassExr = el.getAttribute("loading-custom-class");
       const vm = vnode.context;
+      // console.log("loadingDirective.install -> vm", vm)
+      // console.log("loadingDirective.install -> vnode", vnode);
       const mask = new Mask({
         el: document.createElement("div"),
         data: {

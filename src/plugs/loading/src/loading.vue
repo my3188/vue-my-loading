@@ -9,7 +9,7 @@
       <div class="v-my-loading-spinner">
         <template v-if="spinner">
           <svg
-            v-if="!spinner"
+            v-if="spinner"
             class="circular"
             viewBox="25 25 50 50"
             :width="c_width"

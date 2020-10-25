@@ -1,12 +1,12 @@
 <template>
-  <transition name="el-loading-fade" @after-leave="handleAfterLeave">
+  <transition name="v-my-loading-fade" @after-leave="handleAfterLeave">
     <div
       v-show="visible"
-      class="el-loading-mask"
+      class="v-my-loading-mask"
       :style="{ backgroundColor: background || '' }"
       :class="[customClass, { 'is-fullscreen': fullscreen }]"
     >
-      <div class="el-loading-spinner">
+      <div class="v-my-loading-spinner">
         <template v-if="spinner">
           <svg
             v-if="!spinner"
@@ -33,7 +33,7 @@
           :width="c_width"
           :height="c_height"
         />
-        <p v-if="text" class="el-loading-text" :style="{ color: c_color }">
+        <p v-if="text" class="v-my-loading-text" :style="{ color: c_color }">
           {{ text }}
         </p>
       </div>
@@ -72,10 +72,10 @@ export default {
       return this.color ? this.color : "#4f8bff";
     },
     c_height() {
-      return this.height ? this.height : 80;
+      return (this.height ? this.height : 80)-0;
     },
     c_width() {
-      return this.width ? this.width : 80;
+      return (this.width ? this.width : 80)-0;
     }
     /* loaderType() {
       let rs = "bars";

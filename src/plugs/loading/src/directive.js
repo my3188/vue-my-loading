@@ -51,8 +51,8 @@ loadingDirective.install = (Vue) => {
           if (!el.instance.hiding) return;
           el.domVisible = false;
           const target = binding.modifiers.fullscreen || binding.modifiers.body ? document.body : el;
-          removeClass(target, "el-loading-parent--relative");
-          removeClass(target, "el-loading-parent--hidden");
+          removeClass(target, "v-my-loading-parent--relative");
+          removeClass(target, "v-my-loading-parent--hidden");
           el.instance.hiding = false;
         },
         300,
@@ -69,10 +69,10 @@ loadingDirective.install = (Vue) => {
       });
 
       if (el.originalPosition !== "absolute" && el.originalPosition !== "fixed") {
-        addClass(parent, "el-loading-parent--relative");
+        addClass(parent, "v-my-loading-parent--relative");
       }
       if (binding.modifiers.fullscreen && binding.modifiers.lock) {
-        addClass(parent, "el-loading-parent--hidden");
+        addClass(parent, "v-my-loading-parent--hidden");
       }
       el.domVisible = true;
 
@@ -93,18 +93,24 @@ loadingDirective.install = (Vue) => {
 
   Vue.directive("loading", {
     bind: function(el, binding, vnode) {
+      console.log("loadingDirective.install -> binding", binding)
       const textExr = el.getAttribute("loading-text");
       const spinnerExr = el.getAttribute("loading-spinner");
-      console.log("loadingDirective.install -> spinnerExr", spinnerExr)
-      const loaderExr = vnode.data.attrs["loading-loader"];
+      // console.log("loadingDirective.install -> spinnerExr", spinnerExr)
+      if (vnode.data.attrs==undefined) {
+        // debugger
+      }
+      if (vnode.data && vnode.data.attrs) {
+        const loaderExr = vnode.data.attrs["loading-loader"];
+      }
       const loaderTypeExr = el.getAttribute("loading-loader-type");
-      console.log("loadingDirective.install -> loaderTypeExr", loaderTypeExr)
+      // console.log("loadingDirective.install -> loaderTypeExr", loaderTypeExr)
       const colorExr = el.getAttribute("loading-color");
-      // const heightExr = el.getAttribute("loading-height");
-      const heightExr = vnode.data.attrs["loading-height"];
+      const heightExr = el.getAttribute("loading-height");
+      // const heightExr = vnode.data.attrs["loading-height"];
       // console.log("loadingDirective.install -> heightExr", heightExr)
-      // const widthExr = el.getAttribute("loading-width");
-      const widthExr = vnode.data.attrs["loading-width"];
+      const widthExr = el.getAttribute("loading-width");
+      // const widthExr = vnode.data.attrs["loading-width"];
       // console.log("loadingDirective.install -> widthExr", widthExr)
       const backgroundExr = el.getAttribute("loading-background");
       const customClassExr = el.getAttribute("loading-custom-class");
@@ -114,7 +120,7 @@ loadingDirective.install = (Vue) => {
         data: {
           text: (vm && vm[textExr]) || textExr,
           spinner: (vm && vm[spinnerExr]) || spinnerExr,
-          loader: loaderExr,
+          // loader: loaderExr,
           loaderType: (vm && vm[loaderTypeExr]) || loaderTypeExr,
           color: (vm && vm[colorExr]) || colorExr,
           height: (vm && vm[heightExr]) || heightExr,

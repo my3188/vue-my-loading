@@ -1,10 +1,10 @@
-.el-loading-parent--relative {
+.v-my-loading-parent--relative {
   position: relative !important;
 }
-.el-loading-parent--hidden {
+.v-my-loading-parent--hidden {
   overflow: hidden !important;
 }
-.el-loading-mask {
+.v-my-loading-mask {
   position: absolute;
   z-index: 2000;
   background-color: rgba(0, 0, 0, 0.4);
@@ -16,17 +16,17 @@
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-.el-loading-mask.is-fullscreen {
+.v-my-loading-mask.is-fullscreen {
   position: fixed;
 }
-.el-loading-mask.is-fullscreen .el-loading-spinner {
+.v-my-loading-mask.is-fullscreen .v-my-loading-spinner {
   margin-top: -25px;
 }
-.el-loading-mask.is-fullscreen .el-loading-spinner .circular {
+.v-my-loading-mask.is-fullscreen .v-my-loading-spinner .circular {
   /* height: 50px;//mayue 注释 */
   /* width: 50px;//mayue 注释 */
 }
-.el-loading-spinner {
+.v-my-loading-spinner {
   transform: translateY(-50%);/* mayue添加 */
   top: 50%;
   /* margin-top: -21px; mayue 注释*/
@@ -34,18 +34,18 @@
   text-align: center;
   position: absolute;
 }
-.el-loading-spinner .el-loading-text {
+.v-my-loading-spinner .v-my-loading-text {
   color: #409eff;
   margin: 3px 0;
   font-size: 14px;
 }
-.el-loading-spinner .circular {
+.v-my-loading-spinner .circular {
   /* height: 42px;//mayue 注释 */
   /* width: 42px;//mayue 注释 */
   -webkit-animation: loading-rotate 2s linear infinite;
   animation: loading-rotate 2s linear infinite;
 }
-.el-loading-spinner .path {
+.v-my-loading-spinner .path {
   -webkit-animation: loading-dash 1.5s ease-in-out infinite;
   animation: loading-dash 1.5s ease-in-out infinite;
   stroke-dasharray: 90, 150;
@@ -54,11 +54,11 @@
   stroke: #409eff;
   stroke-linecap: round;
 }
-.el-loading-spinner i {
+.v-my-loading-spinner i {
   color: #409eff;
 }
-.el-loading-fade-enter,
-.el-loading-fade-leave-active {
+.v-my-loading-fade-enter,
+.v-my-loading-fade-leave-active {
   opacity: 0;
 }
 @-webkit-keyframes loading-rotate {

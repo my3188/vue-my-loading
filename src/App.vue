@@ -1,7 +1,8 @@
 <template>
-  <div id="app" v-loading="true">
+  <div id="app" >
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div v-loading="true" style="width:500px;height:400px">500000</div>
   </div>
 </template>
 

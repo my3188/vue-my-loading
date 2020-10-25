@@ -1,6 +1,6 @@
 import Vue from "vue";
 import loadingVue from "./loading.vue";
-import { addClass, removeClass, getStyle } from "@/plugs/dom";
+import { addClass, removeClass, getStyle } from "./dom";
 // import { PopupManager } from 'element-ui/src/utils/popup';
 import afterLeave from "./after-leave";
 const zIndex = 1000;

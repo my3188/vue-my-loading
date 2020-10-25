@@ -29,9 +29,12 @@ export default {
   },
   mounted() {
     // this.$loading.show();
-      console.log(this.$loading)
+      // console.log(this.$loading)
     // Loading.service();
-    this.$loading({height:100,width:100})
+    let loadingInstance =this.$loading({height:100,width:100})
+    setTimeout(() => {
+      loadingInstance.close();
+    }, 5000);
   },
 };
 </script>

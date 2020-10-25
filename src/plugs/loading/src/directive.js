@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Loading from "./loading.vue";
-import { addClass, removeClass, getStyle } from "@/plugs/dom";
+import { addClass, removeClass, getStyle } from "./dom";
 import afterLeave from "./after-leave";
 const Mask = Vue.extend(Loading);
 const zIndex = 1000;
